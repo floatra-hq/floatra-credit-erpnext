@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_id",
+ "creation": "2026-05-12 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_id",
+  "event_type",
+  "received_at",
+  "processed_at",
+  "status",
+  "column_break_6",
+  "platform_id",
+  "signature_verified",
+  "signature",
+  "error",
+  "section_payload",
+  "payload"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_id",
+   "fieldtype": "Data",
+   "label": "Event ID",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Data",
+   "label": "Event Type",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "received_at",
+   "fieldtype": "Datetime",
+   "label": "Received At",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "processed_at",
+   "fieldtype": "Datetime",
+   "label": "Processed At"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "received\nprocessed\nfailed\nduplicate\nignored",
+   "default": "received",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "platform_id",
+   "fieldtype": "Data",
+   "label": "Platform ID"
+  },
+  {
+   "fieldname": "signature_verified",
+   "fieldtype": "Check",
+   "label": "Signature Verified"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Data",
+   "label": "X-Floatra-Signature",
+   "read_only": 1,
+   "search_index": 1,
+   "description": "A delivery whose signature was already processed is not applied again, even under a different event id."
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Small Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "section_payload",
+   "fieldtype": "Section Break",
+   "label": "Payload",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "payload",
+   "fieldtype": "Long Text",
+   "label": "Raw Payload"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-07 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Floatra Credit",
+ "name": "Floatra Webhook Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "sort_field": "received_at",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

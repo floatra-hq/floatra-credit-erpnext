@@ -1,0 +1,14 @@
+{
+  "status": 201,
+  "body": {
+    "success": true,
+    "data": {
+      "platform_id": "plat-1",
+      "already_retired": false,
+      "retired_at": "2026-10-01T12:00:00.000Z"
+    },
+    "error": null,
+    "errorCode": null,
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}

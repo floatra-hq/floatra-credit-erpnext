@@ -1,0 +1,11 @@
+[pre_model_sync]
+
+[post_model_sync]
+floatra_credit.patches.add_floatra_fields_to_customer
+floatra_credit.patches.add_floatra_fields_to_sales_order
+floatra_credit.patches.add_floatra_category_to_item_group
+floatra_credit.patches.add_tenure_days_to_sales_order
+floatra_credit.patches.add_onboard_expanded_fields_to_customer
+floatra_credit.patches.add_confirm_delivery_expanded_fields_to_sales_order
+floatra_credit.patches.add_kyc_link_fields_to_customer
+floatra_credit.patches.v0_3_0_partner_contract

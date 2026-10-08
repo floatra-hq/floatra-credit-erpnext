@@ -1,0 +1,17 @@
+{
+  "status": 201,
+  "body": {
+    "success": true,
+    "data": {
+      "batch_id": "00000000-0000-4000-8000-000000000001",
+      "batch_idempotency_key": "erp-backfill-2026-10-01",
+      "accepted_count": 1,
+      "status": "QUEUED",
+      "message": "1 order(s) queued. Decisions deliver via the bulk.order_decision webhook.",
+      "submitted_at": "2026-10-01T12:00:00.000Z"
+    },
+    "error": null,
+    "errorCode": null,
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}

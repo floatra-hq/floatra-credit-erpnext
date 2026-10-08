@@ -1,0 +1,11 @@
+{
+  "external_merchant_id": "CUST-77",
+  "external_order_id": "SAL-ORD-2026-00042",
+  "amount": "250000.00",
+  "category": "FMCG",
+  "tenure_days": 14,
+  "metadata": {
+    "erp_type": "ERPNEXT",
+    "source": "erp_console"
+  }
+}

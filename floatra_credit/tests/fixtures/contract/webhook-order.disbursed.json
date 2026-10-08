@@ -1,0 +1,11 @@
+{
+  "secret": "contract-fixture-secret",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-Floatra-Signature": "90d8896d6aea14bd4f219374d8903e9602b650213f3c809557d9e077a4f645d9",
+    "X-Floatra-Timestamp": "1790856000",
+    "X-Floatra-Event-ID": "dlv_order_disbursed",
+    "X-Floatra-Delivery-Attempt": "1"
+  },
+  "body": "{\"event\":\"order.disbursed\",\"loanId\":\"loan_01\",\"merchantId\":\"mer_01\",\"merchantExternalId\":\"CUST-77\",\"externalOrderId\":\"SAL-ORD-2026-00042\",\"amount\":\"250000.00\",\"transferCode\":\"TRF_1\",\"disbursedAt\":\"2026-10-01T12:00:00.000Z\",\"timestamp\":\"2026-10-01T12:00:00.000Z\",\"version\":\"1\",\"livemode\":true,\"platformId\":\"plat-1\"}"
+}

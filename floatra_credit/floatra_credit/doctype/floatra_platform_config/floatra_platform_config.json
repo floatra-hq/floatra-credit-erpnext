@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-05-12 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_gateway",
+  "floatra_gateway_url",
+  "platform_id",
+  "column_break_3",
+  "api_key",
+  "webhook_secret",
+  "section_behavior",
+  "enforcement_mode"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_gateway",
+   "fieldtype": "Section Break",
+   "label": "Floatra Gateway"
+  },
+  {
+   "fieldname": "floatra_gateway_url",
+   "fieldtype": "Data",
+   "label": "Gateway URL",
+   "default": "https://api.floatra.com",
+   "reqd": 1,
+   "description": "Host only, e.g. https://api.floatra.com (the app adds /v1/partner/...). The same host serves live and sandbox: the API key decides which."
+  },
+  {
+   "fieldname": "platform_id",
+   "fieldtype": "Data",
+   "label": "Platform ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Password",
+   "label": "API Key",
+   "reqd": 1
+  },
+  {
+   "fieldname": "webhook_secret",
+   "fieldtype": "Password",
+   "label": "Webhook Secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_behavior",
+   "fieldtype": "Section Break",
+   "label": "Behaviour"
+  },
+  {
+   "fieldname": "enforcement_mode",
+   "fieldtype": "Select",
+   "label": "Enforcement Mode",
+   "options": "REORDER_LOCK\nSETTLEMENT_DEDUCTION\nHYBRID",
+   "default": "REORDER_LOCK"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-07 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Floatra Credit",
+ "name": "Floatra Platform Config",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

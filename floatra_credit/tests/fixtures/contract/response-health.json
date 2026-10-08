@@ -1,0 +1,28 @@
+{
+  "status": 200,
+  "body": {
+    "success": true,
+    "data": {
+      "platform_id": "plat-1",
+      "platform_slug": "acme-distributors",
+      "status": "ACTIVE",
+      "integration_mode": "ERP",
+      "erp_type": "ERPNEXT",
+      "mode": "live",
+      "api_key_expires_at": "2027-01-01T00:00:00.000Z",
+      "api_key_expiring_soon": false,
+      "webhook_delivery": {
+        "last_24h": {
+          "total": 10,
+          "delivered": 9,
+          "delivery_rate_pct": 90
+        },
+        "undelivered_count": 1
+      },
+      "checked_at": "2026-10-01T12:00:00.000Z"
+    },
+    "error": null,
+    "errorCode": null,
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}

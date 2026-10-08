@@ -1,0 +1,11 @@
+{
+  "secret": "contract-fixture-secret",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-Floatra-Signature": "2b7da70d1f37ae8404bf9028f2150dddfa552071770a6a20fab409dcba3974ee",
+    "X-Floatra-Timestamp": "1790856000",
+    "X-Floatra-Event-ID": "dlv_order_credit_approved",
+    "X-Floatra-Delivery-Attempt": "1"
+  },
+  "body": "{\"event\":\"order.credit_approved\",\"loanId\":\"loan_01\",\"loanRequestId\":\"lr_01\",\"merchantId\":\"mer_01\",\"merchantExternalId\":\"CUST-77\",\"externalOrderId\":\"SAL-ORD-2026-00042\",\"amount\":\"250000.00\",\"principalAmount\":\"250000.00\",\"interestAmount\":\"12500.00\",\"totalRepayment\":\"262500.00\",\"tenureDays\":14,\"dueDate\":\"2026-10-15T00:00:00.000Z\",\"timestamp\":\"2026-10-01T12:00:00.000Z\",\"version\":\"1\",\"livemode\":true,\"platformId\":\"plat-1\"}"
+}

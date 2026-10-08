@@ -1,0 +1,10 @@
+{
+  "status": 422,
+  "body": {
+    "success": false,
+    "data": null,
+    "error": "A return needs a live delivery dispute on the loan. Raise it first: POST /v1/disputes.",
+    "errorCode": "RETURN_015",
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}

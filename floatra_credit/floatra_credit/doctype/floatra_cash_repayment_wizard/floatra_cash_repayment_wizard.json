@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-05-12 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_target",
+  "customer",
+  "sales_order",
+  "outstanding_balance_display",
+  "column_break_1",
+  "amount",
+  "currency",
+  "reference",
+  "section_details",
+  "source",
+  "collected_at",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_target",
+   "fieldtype": "Section Break",
+   "label": "Target"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "label": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "options": "Sales Order",
+   "label": "Sales Order",
+   "reqd": 1,
+   "description": "Floatra-funded order with an active loan."
+  },
+  {
+   "fieldname": "outstanding_balance_display",
+   "fieldtype": "Currency",
+   "label": "Outstanding (display only)",
+   "read_only": 1,
+   "options": "currency",
+   "description": "Pulled from the Sales Order's Floatra fields. Display only — the actual outstanding is recalculated by Floatra at submit time."
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "reqd": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "options": "Currency",
+   "label": "Currency",
+   "default": "NGN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference",
+   "reqd": 1,
+   "description": "Your own deduplication key (receipt number, settlement batch ID, bank transfer reference). Floatra uses this to detect double-credits."
+  },
+  {
+   "fieldname": "section_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "options": "MANUAL_CASH\nSETTLEMENT_DEDUCTION\nBANK_TRANSFER\nOTHER",
+   "label": "Source",
+   "default": "MANUAL_CASH",
+   "reqd": 1
+  },
+  {
+   "fieldname": "collected_at",
+   "fieldtype": "Datetime",
+   "label": "Collected At",
+   "reqd": 1,
+   "default": "Now"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-05-12 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Floatra Credit",
+ "name": "Floatra Cash Repayment Wizard",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "Sales User",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

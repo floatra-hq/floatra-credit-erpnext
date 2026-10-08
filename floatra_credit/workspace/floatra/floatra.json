@@ -1,0 +1,135 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"floatra-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Floatra</b></span>\",\"col\":12}},{\"id\":\"floatra-shortcuts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floatra Platform Config\",\"col\":3}},{\"id\":\"floatra-customer-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floatra Merchants\",\"col\":3}},{\"id\":\"floatra-so-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floatra Sales Orders\",\"col\":3}},{\"id\":\"floatra-webhook-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Floatra Webhook Log\",\"col\":3}},{\"id\":\"floatra-config-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h6 text-muted uppercase\\\">Configuration</span>\",\"col\":12}},{\"id\":\"floatra-card-config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}},{\"id\":\"floatra-card-merchants\",\"type\":\"card\",\"data\":{\"card_name\":\"Merchants & Credit\",\"col\":4}},{\"id\":\"floatra-card-orders\",\"type\":\"card\",\"data\":{\"card_name\":\"Orders & Repayment\",\"col\":4}}]",
+ "creation": "2026-06-01 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "money",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Floatra",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Floatra Platform Config",
+   "link_count": 0,
+   "link_to": "Floatra Platform Config",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Merchants & Credit",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customers (Floatra merchants)",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Orders & Repayment",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Orders (Floatra-funded)",
+   "link_count": 0,
+   "link_to": "Sales Order",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Floatra Webhook Log",
+   "link_count": 0,
+   "link_to": "Floatra Webhook Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Floatra Credit",
+ "name": "Floatra",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 100,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "format": "",
+   "label": "Floatra Platform Config",
+   "link_to": "Floatra Platform Config",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} merchants",
+   "label": "Floatra Merchants",
+   "link_to": "Customer",
+   "stats_filter": "{\"floatra_credit_status\": [\"is\", \"set\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "format": "{} active",
+   "label": "Floatra Sales Orders",
+   "link_to": "Sales Order",
+   "stats_filter": "{\"floatra_credit_requested\": 1}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} entries",
+   "label": "Floatra Webhook Log",
+   "link_to": "Floatra Webhook Log",
+   "stats_filter": "",
+   "type": "DocType"
+  }
+ ],
+ "title": "Floatra"
+}

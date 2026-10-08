@@ -1,0 +1,21 @@
+{
+  "status": 201,
+  "body": {
+    "success": true,
+    "data": {
+      "return_id": "ret_01",
+      "floatra_order_id": "loan_01",
+      "external_order_id": "SAL-ORD-2026-00042",
+      "return_type": "PARTIAL",
+      "outcome": "LOAN_ADJUSTED",
+      "reason": "DAMAGED: Crushed cartons",
+      "status": "INITIATED",
+      "initiated_at": "2026-10-01T12:00:00.000Z",
+      "adjusted_loan_amount": "200000.00",
+      "adjusted_repayment_amount": "212500.00"
+    },
+    "error": null,
+    "errorCode": null,
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}

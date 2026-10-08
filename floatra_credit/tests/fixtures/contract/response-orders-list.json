@@ -1,0 +1,26 @@
+{
+  "status": 200,
+  "body": {
+    "success": true,
+    "data": {
+      "data": [
+        {
+          "floatra_order_id": "loan_01",
+          "floatra_merchant_id": "mer_01",
+          "principal": "250000.00",
+          "interest": "12500.00",
+          "tenure_days": 14,
+          "due_date": "2026-10-15T00:00:00.000Z",
+          "status": "ACTIVE",
+          "lender_id": "len_01",
+          "created_at": "2026-10-01T12:00:00.000Z"
+        }
+      ],
+      "next_cursor": null,
+      "has_more": false
+    },
+    "error": null,
+    "errorCode": null,
+    "timestamp": "2026-10-01T12:00:00.000Z"
+  }
+}
