@@ -210,6 +210,20 @@ class TestClientCalls(unittest.TestCase):
             err = contract.FloatraAPIError(fx["status"], fx["body"])
             self.assertIn(expected, err.user_message(), name)
 
+    def test_forbidden_codes_are_not_reported_as_wrong_platform(self):
+        # Staging pass 2026-10-08: a 403 AGENT_NOT_AUTHORIZED (an agent id
+        # Floatra does not know) fell through to the generic 403 copy, which
+        # blamed the platform settings.
+        for code, expected in (
+            ("AGENT_NOT_AUTHORIZED", "agent ID"),
+            ("PLATFORM_SUSPENDED", "suspended your platform"),
+        ):
+            body = {"success": False, "data": None, "error": "refused",
+                    "errorCode": code}
+            message = contract.FloatraAPIError(403, body).user_message()
+            self.assertIn(expected, message, code)
+            self.assertNotIn("does not belong to the platform", message, code)
+
 
 class TestWebhookVerification(unittest.TestCase):
     def test_every_core_delivery_verifies_and_tampering_fails(self):

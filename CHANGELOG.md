@@ -3,6 +3,16 @@
 All notable changes to the Floatra app for ERPNext (`floatra_credit`).
 Versions follow `floatra_credit/__init__.py` `__version__`.
 
+## [0.3.1] - 2026-10-08
+
+Found by the staging pass against staging-api (2026-10-08).
+
+- **Clear copy for a refused agent ID.** A `403 AGENT_NOT_AUTHORIZED` (an agent
+  id Floatra does not know) fell through to the generic 403 text, which blamed
+  the platform settings. It now has its own message, as does
+  `PLATFORM_SUSPENDED`. The wire-contract module stays byte-identical with the
+  Odoo addon's.
+
 ## [0.3.0]
 
 First public release, for Frappe / ERPNext v15. MIT licence.

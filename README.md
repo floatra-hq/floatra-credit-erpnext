@@ -15,7 +15,7 @@ tag rather than tracking `main`:
 
 ```bash
 # From your ERPNext bench directory (Frappe / ERPNext v15):
-bench get-app https://github.com/floatra-hq/floatra-credit-erpnext --branch v0.3.0
+bench get-app https://github.com/floatra-hq/floatra-credit-erpnext --branch v0.3.1
 bench --site <your-site> install-app floatra_credit
 bench --site <your-site> migrate   # runs the field patches
 ```
@@ -29,8 +29,8 @@ app directory, for offline installs: unzip into `<bench>/apps/`, then
 download before you unzip it:
 
 ```bash
-shasum -a 256 -c floatra_credit-erpnext-0.3.0.zip.sha256   # macOS
-sha256sum -c floatra_credit-erpnext-0.3.0.zip.sha256       # Linux
+shasum -a 256 -c floatra_credit-erpnext-0.3.1.zip.sha256   # macOS
+sha256sum -c floatra_credit-erpnext-0.3.1.zip.sha256       # Linux
 ```
 
 Only install from `github.com/floatra-hq`. Anything published under another
