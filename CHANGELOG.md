@@ -3,6 +3,13 @@
 All notable changes to the Floatra app for ERPNext (`floatra_credit`).
 Versions follow `floatra_credit/__init__.py` `__version__`.
 
+## [0.3.2] - 2026-10-08
+
+- **Clear copy for a deactivated platform.** Floatra now answers a deactivated
+  platform's API key with `403 PLATFORM_INACTIVE` (core, 2026-10-08); the app
+  says the platform is deactivated instead of the generic 403 text. The
+  wire-contract module stays byte-identical with the Odoo addon's.
+
 ## [0.3.1] - 2026-10-08
 
 Found by the staging pass against staging-api (2026-10-08).
