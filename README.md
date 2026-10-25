@@ -36,13 +36,13 @@ sha256sum -c floatra_credit-erpnext-0.3.2.zip.sha256       # Linux
 Only install from `github.com/floatra-hq`. Anything published under another
 owner is not from Floatra.
 
-Then configure under **Floatra → Configuration** (System Manager role):
+Then configure in the **Floatra** workspace → **Configuration** → **Floatra Platform Config** (System Manager role). The values come from the Floatra platform console (Floatra creates the platform and invites your account owner); full guide: the **ERP Connectors** page of the Floatra docs (`/docs/connectors`).
 
 - **Gateway URL** — `https://api.floatra.com` (host only; the app adds `/v1/partner/...`). The same host serves live and sandbox: the API key decides which. A stored `…/v1` or the old `api.floatra.io` default is migrated by the 0.3.0 patch.
-- **Platform ID** — issued by Floatra
-- **API Key** — issued by Floatra (stored encrypted via Frappe's `Password` field type)
-- **Webhook Secret** — issued by Floatra (used for inbound HMAC verification)
-- **Enforcement Mode** — `REORDER_LOCK` (recommended for ERPNext deployments)
+- **Platform ID** — shown on the console's Sandbox Home
+- **API Key** — sandbox `pk_…` / `sbx_pk_…` from the console, or the `live_pk_…` key issued at Go Live (stored encrypted via Frappe's `Password` field type)
+- **Webhook Secret** — shown once when you first save the webhook URL on the console's Webhooks page (used for inbound HMAC verification)
+- **Enforcement Mode** — leave at `REORDER_LOCK`; this release stores it but does not send it to Floatra
 
 The webhook receiver lives at:
 
@@ -50,7 +50,7 @@ The webhook receiver lives at:
 POST /api/method/floatra_credit.controllers.webhook.receive
 ```
 
-Hand that URL to Floatra ops so they can register it on your platform record.
+Save that URL (public HTTPS) as the **Webhook URL** on the **Webhooks** page of the Floatra platform console. Make sure the site's scheduler is enabled (`bench --site <your-site> enable-scheduler`).
 
 ---
 
@@ -196,7 +196,8 @@ python3 -m unittest \
     floatra_credit.tests.test_floatra_api_security \
     floatra_credit.tests.test_credit_lock \
     floatra_credit.tests.test_delivery_validation \
-    floatra_credit.tests.test_pii_redaction -v
+    floatra_credit.tests.test_pii_redaction \
+    floatra_credit.tests.test_kyc_link_permlevel -v
 ```
 
 `floatra_credit/tests/fixtures/contract/` holds the responses and signed

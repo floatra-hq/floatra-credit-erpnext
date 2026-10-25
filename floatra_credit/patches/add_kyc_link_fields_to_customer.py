@@ -7,11 +7,19 @@ so desk users can copy or email it to the merchant; the
 `merchant.kyc_completed` webhook clears it. Mirrors the Odoo
 `res.partner.floatra_kyc_url` / `floatra_kyc_url_expires_at` fields.
 
+Both fields sit at permission level KYC_LINK_PERMLEVEL (0.3.3): the link is a
+bearer credential, so only roles that can edit Customers (the ones that can
+mint a link) see it — granted by `v0_3_3_restrict_kyc_link_fields`.
+
 Idempotent: `create_custom_fields` upserts. Safe to re-run.
 """
 
 import frappe
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
+
+#: Permission level of the KYC link fields. Level 0 is every Customer reader;
+#: level 1 is granted only to roles with write on Customer.
+KYC_LINK_PERMLEVEL = 1
 
 
 def execute() -> None:
@@ -24,6 +32,7 @@ def execute() -> None:
                 "insert_after": "floatra_kyc_status",
                 "read_only": 1,
                 "no_copy": 1,
+                "permlevel": KYC_LINK_PERMLEVEL,
                 "description": (
                     "Floatra's hosted KYC link for this merchant (Floatra → "
                     "Get KYC Link). Send it to the merchant: they open it on "
@@ -39,6 +48,7 @@ def execute() -> None:
                 "insert_after": "floatra_kyc_url",
                 "read_only": 1,
                 "no_copy": 1,
+                "permlevel": KYC_LINK_PERMLEVEL,
                 "depends_on": "eval:doc.floatra_kyc_url",
             },
         ]

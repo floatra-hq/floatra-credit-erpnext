@@ -27,6 +27,7 @@ from .patches import (
     add_confirm_delivery_expanded_fields_to_sales_order,
     add_kyc_link_fields_to_customer,
     v0_3_0_partner_contract,
+    v0_3_3_restrict_kyc_link_fields,
 )
 
 
@@ -47,6 +48,9 @@ def after_install() -> None:
     add_confirm_delivery_expanded_fields_to_sales_order.execute()
     add_kyc_link_fields_to_customer.execute()
     v0_3_0_partner_contract.execute()
+    # Grants level-1 read to Customer writers, then re-runs the KYC-link
+    # field patch above at level 1 — order is the patch's own.
+    v0_3_3_restrict_kyc_link_fields.execute()
     _install_workspace()
 
 

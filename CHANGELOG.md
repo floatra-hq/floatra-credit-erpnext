@@ -3,6 +3,22 @@
 All notable changes to the Floatra app for ERPNext (`floatra_credit`).
 Versions follow `floatra_credit/__init__.py` `__version__`.
 
+## [0.3.3] - 2026-10-25
+
+- **The KYC link is visible only to Customer editors.** `Customer.floatra_kyc_url`
+  (and its expiry) sat at permission level 0, so every role that can read a
+  Customer saw the merchant's single-use KYC link. Only roles that can edit a
+  Customer can get a link, so only they now see one: the patch
+  `v0_3_3_restrict_kyc_link_fields` grants permission level 1 `read` on
+  Customer to every role with unconditional write there, then moves both fields
+  to level 1.
+- **What changes on your site:** Frappe answers Customer permissions from
+  Custom DocPerm once any rule there is customised, so the patch first copies
+  Customer's standard permissions (nothing is lost, and Role Permission Manager
+  shows the result). From then on, standard Customer permission changes in a
+  future ERPNext upgrade won't apply automatically, as with any Role
+  Permission Manager edit. Run `bench migrate` after upgrading.
+
 ## [0.3.2] - 2026-10-08
 
 - **Clear copy for a deactivated platform.** Floatra now answers a deactivated
